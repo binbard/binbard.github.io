@@ -1,116 +1,339 @@
-body{
-    background-color: #202020;
-    color: #dedede;
-    font-family: 'Poppins', sans-serif;
-    font-size: larger;
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #202020;
+  color: #dedede;
+  font-family: 'Poppins', sans-serif;
+  font-size: larger;
 }
 
 ::selection {
-    color: #094067;
-    background: #f9bc60;
+  color: #094067;
+  background: #f9bc60;
 }
 
 /********** MAIN **********/
 
-.gap-50{
-    height: 50px;
+.gap-50 {
+  height: 50px;
+}
+
+.hr-g {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #a09b95, rgba(0, 0, 0, 0));
 }
 
 /********** NAVIGATION **********/
 
-.Nav{
-    background-color: #2d2d2d;
-    display: flex;
-    justify-content: space-evenly;
-    place-content: flex-end;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-  }
+.Nav {
+  background-color: #2d2d2d;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  position: sticky;
+}
 
-  .Nav .logo{
-    display: flex;
-    place-items: center;
-    margin-right: auto;
-    color: #dedede;
-    text-decoration: none;
-    padding-left: 1vw;
-  }
-  
-  .Nav ul{
-    list-style: none;
-    margin: 0;
-    display: flex;
-    gap: 1vw;
-    padding-right: 0.5vw;
-  }
+.Nav .logo {
+  display: flex;
+  place-items: center;
+  margin-right: auto;
+  color: #dedede;
+  text-decoration: none;
+  padding-left: 1vw;
+}
 
-  .Nav ul li{
-    padding: 8px;
-    border-radius: 5px;
-  }
+.Nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: 1vw;
+  padding-right: 0.5vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
 
-  .Nav ul li:hover{
-    background-color: #f9bc60;
-    padding: 8px;
-    border-radius: 5px;
-  }
+.Nav ul::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+}
 
-  .Nav ul li:hover a {
-    color: #094067;
-  }
-  
-  .Nav ul li a{
-    color: #dedede;
-    text-decoration: none;
-  }
-  
-  
+.Nav ul li {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.Nav ul li:hover {
+  background-color: #f9bc60;
+  padding: 8px;
+  border-radius: 5px;
+  transition: .5s ease-in-out;
+}
+
+.Nav ul li:hover a {
+  color: #094067;
+  transition: .25s ease-in-out;
+}
+
+.Nav ul li a {
+  color: #dedede;
+  text-decoration: none;
+}
+
+
 /********** FRONT **********/
 
-.Front{
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-  }
+.Front {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
 
-  .Front .info .header{
-    display: flex;
-    font-size: xx-large;
-  }
+.Front .info .header {
+  display: flex;
+  font-size: xx-large;
+}
 
-  .Front .info .subheader{
-    font-size: x-large;
-    color: #6d6a7c;
-  }
+.Front .info .subheader {
+  font-size: x-large;
+  color: #6d6a7c;
+}
 
-  .Front .info .bio{
-    color: #f9bc60;
-    width: 20vw;
-  }
+.Front .info .bio {
+  color: #f9bc60;
+  width: 20vw;
+}
 
-  .Front .connect{
-    background-color: #fa5246;
-    color: #fffffe;
-    height: 30px;
-    border-radius: 5px;
-  }
+.Front .connect {
+  background-color: #fa5246;
+  color: #fffffe;
+  height: 30px;
+  border-radius: 5px;
+}
 
-  .Front .avatar img{
-    margin-left: 20px;
-    height: 200px;
-  }
+.Front .avatar img {
+  margin-left: 20px;
+  height: 200px;
+}
+
+
+
+/********** MISC **********/
+.head {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.head .title {
+  display: flex;
+  font-size: xx-large;
+}
+
+.head .subtitle {
+  color: #6d6a7c;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+
 
 /********** ABOUT **********/
 
-.About{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.About {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 15px; */
+}
+
+.About .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  width: 80vw;
+}
+
+@media screen and (min-width: 768px) {
+  .About .body {
+    width: 50vw;
+  }
+}
+
+.About .body .avatar {
+  width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-image: url("./assets/binbard.png");
+  background-size: cover;
+}
+
+.About .body .content {
+  text-align: center;
+}
+
+.About .body .content p {
+  font-size: large;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.About .body .experience {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.About .body .experience div {
+  text-align: center;
+}
+
+.About .body .experience div p:first-child {
+  font-size: xx-large;
+  margin-bottom: 5px;
+}
+
+.About .body .experience div p:last-child {
+  font-size: large;
+  color: #6d6a7c;
+}
+
+
+/********** PROJECTS **********/
+
+.Projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.Projects .head .title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.Projects .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  width: 60vw;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.project__image {
+  flex: 1;
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.project__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project__content {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.project__title {
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project__description {
+  font-size: 1rem;
+}
+
+.project__description a {
+  color: #f9bc60;
+  text-decoration: none;
+}
+
+.project__description a:visited {
+  text-decoration: none;
+}
+
+.project__date {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+  .project__image {
+    display: none;
   }
 
-  .About .info{
-    display: block;
-    padding: 15px;
+  .project__date {
+    display: none;
   }
+}
+
+
+
+/********** CONTACT **********/
+
+
+/********** FOOTER **********/
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.Footer .body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.Footer .body .info {
+  text-align: center;
+}
+
+.Footer .body .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px;
+}
+
+.Footer .body .social a img {
+  height: 20px;
+  margin: 10px;
+}
